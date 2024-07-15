@@ -1,0 +1,30 @@
+[package]
+name = "bevy_asteroid"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+resolver = "2"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+# [profile.release]
+# codegen-units = 1
+# lto = "thin"
+
+# [profile.wasm-release]
+# inherits = "release"
+# opt-level = "z"
+# strip = "debuginfo"
+
+[dependencies]
+bevy = { version = "0.14.0", features = ["dynamic_linking"] }
+avian2d = "0.1"
+bevy_rand = "0.7"
+bevy_prng = { version = "0.7", features = ["rand_chacha", "wyrand"] }
+rand_core = "0.6"
+bevy_hanabi = "0.12"
